@@ -1,1 +1,7 @@
 {{ ansible_managed | comment }}
+
+{% if securetty_terminals is defined %}
+{%   for terminal in securetty_terminals %}
+{{ terminal }}
+{%   endfor %}
+{% endif %}

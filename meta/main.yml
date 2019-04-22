@@ -27,17 +27,17 @@ dependencies:
         fedora: 27
         rhel: 6
     tags:
-      - role::services
+      - role::securetty
 
   - role: amtega.select_hostvars
     vars:
       select_hostvars_query:
-        pattern: "^services_.*"
-        exclude_pattern: "^services_defaults$"
+        pattern: "^securetty_.*"
+        exclude_pattern: "^securetty_defaults$"
         attributes:
           - name
-        fact_name: services_hostvars
+        fact_name: securetty_hostvars
         output_type: list
-    when: services_load_from_hostvars
+    when: securetty_load_from_hostvars
     tags:
-      - role::services
+      - role::securetty

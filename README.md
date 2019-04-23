@@ -1,10 +1,6 @@
 # Ansible securetty role
 
-This is an [Ansible](http://www.ansible.com) role which configures which tty is identified as secure.
-
-## Requirements
-
-[Ansible 2.7+](http://docs.ansible.com/ansible/latest/intro_installation.html)
+This is an [Ansible](http://www.ansible.com) role which configures which tty terminal devices are identified as secure.
 
 ## Role Variables
 

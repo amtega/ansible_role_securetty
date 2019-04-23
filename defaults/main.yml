@@ -1,2 +1,53 @@
 ---
 # Role default lower priority variables
+
+securetty_terminals: []
+
+# # Example values:
+# securetty_terminals:
+#   - console
+#   - vc/1
+#   - vc/2
+#   - vc/3
+#   - vc/4
+#   - vc/5
+#   - vc/6
+#   - vc/7
+#   - vc/8
+#   - vc/9
+#   - vc/10
+#   - vc/11
+#   - tty1
+#   - tty2
+#   - tty3
+#   - tty4
+#   - tty5
+#   - tty6
+#   - tty7
+#   - tty8
+#   - tty9
+#   - tty10
+#   - tty11
+#   - ttyS0
+#   - ttysclp0
+#   - sclp_line0
+#   - 3270/tty1
+#   - hvc0
+#   - hvc1
+#   - hvc2
+#   - hvc3
+#   - hvc4
+#   - hvc5
+#   - hvc6
+#   - hvc7
+#   - hvsi0
+#   - hvsi1
+#   - hvsi2
+#   - xvc0
+
+# Indicate `securetty` must be loaded also from host variables. Any host variable
+# that begins with "securetty_*" and contains the necessary attributes
+# will be loaded as an item to manage by the role. The variables must follow the
+# structure detailed before for `securetty`
+
+securetty_load_from_hostvars: no

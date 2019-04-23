@@ -1,7 +1,10 @@
+---
+# Role dependencies
+
 galaxy_info:
   role_name: securetty
   author: Daniel Sánchez Fábregas
-  description: Configures which tty is identified as secure.
+  description: Configures which tty terminal devices are identified as secure
   company: AMTEGA - Xunta de Galicia
   license: GPLv3 or EUPL
   min_ansible_version: 2.7
@@ -33,9 +36,7 @@ dependencies:
     vars:
       select_hostvars_query:
         pattern: "^securetty_.*"
-        exclude_pattern: "^securetty_defaults$"
-        attributes:
-          - name
+        exclude_pattern: "^securetty_terminals$"
         fact_name: securetty_hostvars
         output_type: list
     when: securetty_load_from_hostvars

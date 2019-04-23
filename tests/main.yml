@@ -28,23 +28,24 @@
   tags:
     - idempotence
 
-- name: Test services role
+- name: Test securetty role
   hosts: docker_sandbox_containers
-  tasks:
-
-    - name: Add secure tty
+  roles:
+    - role: amtega.securetty
       vars:
+        securetty_load_from_hostvars: yes
         securetty_terminals:
           - tty1
           - tty2
-      include_role:
-        name: amtega.securetty
-
-    - name: Check wrappers
+  tasks:
+    - name: Check secure tty terminals
       shell: grep --fixed-strings "{{ item }}" /etc/securetty
+      changed_when: no
       loop:
         - tty1
         - tty2
+        - tty42
+        - tty43
   tags:
     - idempotence
 

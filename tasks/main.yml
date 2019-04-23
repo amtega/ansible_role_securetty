@@ -1,7 +1,7 @@
 ---
 # Role tasks
 
-- name: Configure secure tty's
+- name: Configure secure tty terminals
   template:
     src: securetty.j2
     dest: /etc/securetty
@@ -9,3 +9,10 @@
     group: root
     mode: 0600
     backup: yes
+  vars:
+    securetty_to_manage: >-
+      {{ securetty_terminals
+         + ((securetty_load_from_hostvars)
+            | ternary(securetty_hostvars | default([]) | flatten, [])) }}
+  tags:
+    - role::securetty

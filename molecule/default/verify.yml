@@ -1,0 +1,14 @@
+---
+
+- name: Verify
+  hosts: molecule_hosts
+  gather_facts: no
+  tasks:
+    - name: Check secure tty terminals
+      command: grep --fixed-strings "{{ item }}" /etc/securetty
+      changed_when: no
+      loop:
+        - tty1
+        - tty2
+        - tty42
+        - tty43

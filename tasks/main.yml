@@ -2,7 +2,7 @@
 # Role tasks
 
 - name: Configure secure tty terminals
-  template:
+  ansible.builtin.template:
     src: securetty.j2
     dest: /etc/securetty
     owner: root

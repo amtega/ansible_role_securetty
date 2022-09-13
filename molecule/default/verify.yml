@@ -5,7 +5,7 @@
   gather_facts: no
   tasks:
     - name: Check secure tty terminals
-      command: grep --fixed-strings "{{ item }}" /etc/securetty
+      ansible.builtin.command: grep --fixed-strings "{{ item }}" /etc/securetty
       changed_when: no
       loop:
         - tty1
